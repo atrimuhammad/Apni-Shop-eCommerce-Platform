@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "UpdatePersonalInfo";
+}
+
+@model ApniShop.Models.Registration
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ApniShop.com</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1> Update Personal Info. </h1>
+    <form asp-controller="ProfilePage" asp-action="SaveUpdatedRegInfo">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label style="margin-left:0px" class="control-label">Name</label>
+            <input value="@Model.Name" style="margin-left:0px; max-width: 400px" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label style="margin-left:0px" class="control-label">MobileNo</label>
+            <input value="@Model.MobileNo" style="margin-left:0px; max-width: 400px" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Update" style="margin-left:0px" class="btn btn-primary" />
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "ProfilePage";
+}
+
+@model ApniShop.Models.Registration
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ApniShop.com</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1>Personal Information</h1>
+
+    <h3>Name: @Model.Name</h3>
+    <h3>Email: @Model.Email</h3>
+    <h3>PhoneNo: @Model.MobileNo</h3>
+
+    <hr />
+
+    <a asp-area="" asp-controller="ProfilePage" asp-action="UpdatePersonalInfo" class="updatepersonalinfo">Update Personal Info</a>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+    ViewData["Title"] = "RegistrationPage";
+}
+
+@model ApniShop.Models.Registration
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegistrationPage</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1 class="text-center">User Registration Form</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-9">
+            <form asp-controller="Register" asp-action="SaveRegistrationInfo">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label style="margin-left:560px" asp-for="Name" class="control-label"></label>
+                    <input style="margin-left:560px; max-width: 400px" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-left:560px" asp-for="Email" class="control-label"></label>
+                    <input style="margin-left:560px; max-width: 400px" asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-left:560px" asp-for="MobileNo" class="control-label"></label>
+                    <input style="margin-left:560px; max-width: 400px" asp-for="MobileNo" class="form-control" />
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-left:560px" asp-for="Pwd" class="control-label"></label>
+                    <input style="margin-left:560px; max-width: 400px" asp-for="Pwd" class="form-control" type="password" />
+                    <span asp-validation-for="Pwd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-left:560px" asp-for="ConfirmPwd" class="control-label"></label>
+                    <input style="margin-left:560px; max-width: 400px" asp-for="ConfirmPwd" class="form-control" type="password" />
+                    <span asp-validation-for="ConfirmPwd" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Register" style="margin-left:560px" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

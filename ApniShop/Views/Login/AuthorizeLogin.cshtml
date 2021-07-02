@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+
+    ViewData["Title"] = "AuthorizeLogin";
+
+    var flag = ViewBag.Message;
+
+    if (flag == true)
+    {
+        <!DOCTYPE html>
+
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>AuthorizeLogin</title>
+        </head>
+        <body>
+            <h1 class="text-center">Login Sucessfull</h1>
+
+            <h1 class="text-center"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Go to Site</a></h1>
+            
+        </body>
+    </html>
+}
+if (flag == false)
+{
+    <h1 class="text-center">Login UnSucessfull</h1>
+}
+}

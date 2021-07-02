@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Add Product Image</h1>
+
+    <form asp-action="UploadImage" asp-controller="AddProductImage" method="post" enctype="multipart/form-data">
+        <input type="file" id="file1" name="file1" multiple="multiple" />
+        <button type="submit">Upload Image</button>
+    </form>
+
+    <form asp-action="RetrieveImage" asp-controller="AddProductImage" method="post">
+        <button type="submit">Show Latest Image</button>
+    </form>
+
+    <h1> @ViewBag.Message </h1>
+    <h1> @ViewBag.ImageTitle </h1>
+    <img src="@ViewBag.ImageDataUrl" />
+</div>
